@@ -3,10 +3,12 @@ Django==5.2.6
 django-stubs==5.2.2
 django-stubs-ext==5.2.2
 djangorestframework==3.16.1
+django-redis==5.4.0
 mypy==1.17.1
 mypy_extensions==1.1.0
 pathspec==0.12.1
 python-dotenv==1.1.1
+redis==5.0.1
 sqlparse==0.5.3
 types-python-dateutil==2.9.0.20250822
 types-PyYAML==6.0.12.20250822
