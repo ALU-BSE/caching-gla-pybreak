@@ -123,6 +123,21 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Caching configuration (Redis)
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379/1'),
+        'TIMEOUT': None,
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+    }
+}
+
+# Default cache TTL (seconds)
+CACHE_TTL = int(os.environ.get('CACHE_TTL', '300'))
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
